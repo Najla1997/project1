@@ -1,0 +1,204 @@
+<!-- top bar -->
+<ion-header>
+  <ion-toolbar class="topbarsize" color="medium">
+
+    <ion-title color="dark">
+      انشاء النشاط
+    </ion-title>
+
+
+    <ion-button class="backbutton" href="/homepage" size="small" color="Tertiary">
+      <ion-icon color="dark" name="arrow-back"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">
+
+
+   <ion-button (click)="appearlist1()" color="light" expand="full"> 
+    <h4 color="black"> الفئة </h4>
+  </ion-button>
+
+    <ion-list>
+       <ion-radio-group [(ngModel)]="create.namep">
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>مطاعم</ion-label>
+          <ion-radio (ionSelect)="optionSelected('namep','مطاعم')" value="مطاعم"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>مولات</ion-label>
+          <ion-radio (ionSelect)="optionSelected('namep','مولات')" value="مولات"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label> فعاليات</ion-label>
+          <ion-radio (ionSelect)="optionSelected('namep','فعاليات ')" value="فعاليات "></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>مقاهي</ion-label>
+          <ion-radio (ionSelect)="optionSelected('namep','مقاهي ')" value="مقاهي "></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+  <ion-button (click)="appearlist2()" color="light" expand="full">
+    <h4 color="black"> نوع المكان </h4>
+  </ion-button>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="create.type_place">
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label> مطاعم هندية</ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_place','هندي')" value="هندي"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>مطاعم ايطالية</ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_place','ايطالي')" value="ايطالي"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label> مطاعم فرنسية</ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_place','فرنسي ')" value="فرنسي "></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>مطاعم شعبية</ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_place','شعبي ')" value="شعبي "></ion-radio>
+        </ion-item>
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>مطاعم آسيوية</ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_place','اسيوي ')" value="اسيوي "></ion-radio>
+        </ion-item>
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>وجبات سريعة</ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_place','اسيوي ')" value="وجبات سريعة "></ion-radio>
+        </ion-item>
+
+
+      </ion-radio-group>
+    </ion-list>
+
+  <ion-button (click)="appearlist3()" color="light" expand="full">
+    <h4 color="black"> نوع الجلسة </h4>
+  </ion-button>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="create.type_j">
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label> جلسة داخلية </ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_j','داخلي ')"   value="داخلي"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>جلسة خارجية </ion-label>
+          <ion-radio (ionSelect)="optionSelected('type_j','خارجي ')"  value="خارجي"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+  <ion-button (click)="appearlist4()" color="light" expand="full">
+    <h4 color="black"> الفئة </h4>
+  </ion-button>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="create.vistor_Type">
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label> افراد</ion-label>
+          <ion-radio (ionSelect)="optionSelected('vistor_Type','افراد')" value="افراد"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>عائلي </ion-label>
+          <ion-radio (ionSelect)="optionSelected('vistor_Type','عائلي')" value="عائلي"></ion-radio>
+        </ion-item>
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>اطفال </ion-label>
+          <ion-radio (ionSelect)="optionSelected('vistor_Type','اطفال')" value="اطفال"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+  <ion-button (click)="appearlist5()" color="light" expand="full">
+    <h4 color="black"> الوقت </h4>
+  </ion-button>
+
+    <ion-item>
+      <label for="">من</label>
+      <ion-label>HH:mm</ion-label>
+      <ion-datetime [(ngModel)]="create.Time_start" displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <label for="">الى</label>
+      <ion-label>HH:mm</ion-label>
+      <ion-datetime [(ngModel)]="create.Time_end" displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+
+  <ion-button (click)="appearlist6()" color="light" expand="full">
+    <h4 color="black"> التاريخ </h4>
+  </ion-button>
+
+    <ion-item>
+      <label for="">التاريخ</label>
+      <ion-datetime [(ngModel)]="create.Date" displayFormat="MM/DD/YYYY" min="1994-03-14" max="2020-12-09"></ion-datetime>
+    </ion-item>
+ 
+  <ion-button (click)="appearlist7()" color="light" expand="full">
+    <h4 color="black"> التكلفة </h4>
+  </ion-button>
+
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]="create.cost">
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label> 100</ion-label>
+          <ion-radio (ionSelect)="optionSelected('cost','100')" value="100"></ion-radio>
+        </ion-item>
+
+
+        <ion-item color="Tertiarys" text-right>
+          <ion-label>200 </ion-label>
+          <ion-radio (ionSelect)="optionSelected('cost','200')" value="200"></ion-radio>
+        </ion-item>
+
+
+      </ion-radio-group>
+    </ion-list>
+
+ 
+  <ion-button (click)="appearlist8()" color="light" expand="full">
+    <h4 color="black"> عدد الاشخاص </h4>
+  </ion-button>
+
+
+    <input [(ngModel)]="create.number_vist" type="text" name="" id="1">
+
+
+  <br>
+  
+  <div class="createactivitybtn">
+    <ion-button (click)="createactivity()" shape="round" color="medium"> انشاء </ion-button>
+  </div>
+
+</ion-content>
